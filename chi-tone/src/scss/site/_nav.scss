@@ -1,0 +1,197 @@
+#navLogo {
+    position: fixed;
+    z-index: 1003;
+    width:rem(150,$text-bp-sm);
+    height:rem(150,$text-bp-sm);
+    left:rem(20,$text-bp-sm);
+    top:rem(-2,$text-bp-sm);
+    border:rem(2,$text-bp-sm) solid #000;
+
+    @include bp-medium {
+        width:rem(130,$text-bp-md);
+        height:rem(130,$text-bp-md);
+        left:rem(30,$text-bp-md);
+        top:rem(-2,$text-bp-md);
+        border:rem(2,$text-bp-md) solid #000;
+    }
+
+    @include bp-large {
+        width:rem(130,$text-bp-lg);
+        height:rem(130,$text-bp-lg);
+        left:rem(30,$text-bp-lg);
+        top:rem(-2,$text-bp-lg);
+        border:rem(2,$text-bp-lg) solid #000;
+    }
+}
+#navLogo img {
+  width:100%;
+  height:auto;
+}
+
+#navMenuBtn {
+  position: fixed;
+  z-index: 1001;
+  color:#FFF;
+  background-color: #000;
+  font-size: rem(40,$text-bp-sm);
+  padding: rem(40,$text-bp-sm);
+  visibility:visible;
+
+  right:rem(18,$text-bp-sm);
+  top:rem(18,$text-bp-sm);
+
+  @include bp-medium {
+    visibility:hidden;
+    font-size: rem(18,$text-bp-md);
+    padding: 0 rem(10,$text-bp-md);
+  }
+
+  @include bp-large {
+    visibility:hidden;
+    font-size: rem(18,$text-bp-lg);
+    padding: 0 rem(10,$text-bp-lg);
+  }
+}
+
+#navMenuCloseBtn {
+  position: fixed;
+  z-index: 1003;
+  color:#fff;
+  background-color: #000;
+  font-size: rem(55,$text-bp-sm);
+  padding: rem(30,$text-bp-sm);
+  visibility:hidden;
+
+  right:rem(18,$text-bp-sm);
+  top:rem(18,$text-bp-sm);
+
+  @include bp-medium {
+    font-size: rem(18,$text-bp-md);
+    padding: 0 rem(10,$text-bp-md);
+  }
+
+  @include bp-large {
+    font-size: rem(18,$text-bp-lg);
+    padding: 0 rem(10,$text-bp-lg);
+  }
+}
+
+#navButtons {
+
+    position: fixed;
+    z-index: 1002;
+    background-color: #000;
+    display:none;
+    opacity:0;
+
+    right:rem(0,$text-bp-sm);
+    top:rem(0,$text-bp-sm);
+    padding-top:rem(240,$text-bp-sm);
+
+    width:100%;
+    height:100%;
+
+    @include bp-medium {
+        display:block;
+        opacity:1;
+        right:rem(18,$text-bp-md);
+        top:rem(18,$text-bp-md);
+        padding-top:0;
+        width:auto;
+        height:auto;
+    }
+
+    @include bp-large {
+        display:block;
+        opacity:1;
+        right:rem(0,$text-bp-lg);
+        top:rem(25,$text-bp-lg);
+        padding-top:0;
+        width:auto;
+        height:auto;
+    }
+}
+
+#navBtnHolder {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#socialBtnHolder {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    
+    width:100%;
+    padding-top:rem(40,$text-bp-sm);
+    @include bp-medium {
+        width:auto;
+        padding-top:0;
+    }
+
+    @include bp-large {
+        width:auto;
+        padding-top:0;
+    }
+}
+
+.navBtn {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Ultra', serif;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #000;
+
+    font-size: rem(70,$text-bp-sm);
+    letter-spacing: rem(1,$text-bp-sm);
+    padding: rem(20,$text-bp-sm) 0;
+    width:100vw;
+
+     @include bp-medium {
+        font-size: rem(19,$text-bp-md);
+        letter-spacing: rem(1,$text-bp-md);
+        padding: rem(16,$text-bp-md);
+        width:auto;
+      }
+
+    @include bp-large {
+        font-size: rem(24,$text-bp-lg);
+        letter-spacing: rem(1,$text-bp-lg);
+        padding: rem(20,$text-bp-lg);
+        width:auto;
+    }
+}
+
+.navBtn:hover, .socialBtn:hover {
+    color: #000;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+
+.socialBtn {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    background-color: #000;
+    font-size: rem(70,$text-bp-sm);
+    padding: 0 rem(25,$text-bp-sm);
+
+    @include bp-medium {
+        font-size: rem(22,$text-bp-md);
+        padding: rem(16,$text-bp-md) rem(8,$text-bp-md);
+    }
+
+    @include bp-large {
+        font-size: rem(27,$text-bp-lg);
+        padding: rem(20,$text-bp-lg) rem(10,$text-bp-lg);
+    }
+}
+
+
+
+
+
