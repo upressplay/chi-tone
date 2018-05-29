@@ -1,4 +1,4 @@
 # Add any directories, files, or patterns you don't want to be tracked by version control
-chi-tone/node_modules
-chi-tone/build
+gridit/node_modules
+gridit/build
 .DS_Store

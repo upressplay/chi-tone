@@ -1,26 +1,21 @@
 #navLogo {
-    position: fixed;
-    z-index: 1003;
-    width:rem(150,$text-bp-sm);
-    height:rem(150,$text-bp-sm);
-    left:rem(20,$text-bp-sm);
-    top:rem(-2,$text-bp-sm);
-    border:rem(2,$text-bp-sm) solid #000;
+    background-position: top center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+
+    width:rem(750,$text-bp-sm);
+    height:rem(350,$text-bp-sm);
 
     @include bp-medium {
-        width:rem(130,$text-bp-md);
-        height:rem(130,$text-bp-md);
-        left:rem(30,$text-bp-md);
-        top:rem(-2,$text-bp-md);
-        border:rem(2,$text-bp-md) solid #000;
+        background-size: 100% auto;
+        width:rem(1270,$text-bp-md);
+        height:rem(240,$text-bp-md);
     }
 
     @include bp-large {
-        width:rem(130,$text-bp-lg);
-        height:rem(130,$text-bp-lg);
-        left:rem(30,$text-bp-lg);
-        top:rem(-2,$text-bp-lg);
-        border:rem(2,$text-bp-lg) solid #000;
+        background-size: 100% auto;
+        width:rem(1600,$text-bp-lg);
+        height:rem(300,$text-bp-lg);
     }
 }
 #navLogo img {
@@ -83,6 +78,7 @@
     background-color: #000;
     display:none;
     opacity:0;
+    text-align: center; 
 
     right:rem(0,$text-bp-sm);
     top:rem(0,$text-bp-sm);
@@ -92,6 +88,7 @@
     height:100%;
 
     @include bp-medium {
+        position: static;
         display:block;
         opacity:1;
         right:rem(18,$text-bp-md);
@@ -102,6 +99,7 @@
     }
 
     @include bp-large {
+        position: static;
         display:block;
         opacity:1;
         right:rem(0,$text-bp-lg);
@@ -139,14 +137,13 @@
     display: inline-block;
     vertical-align: middle;
     text-align: center;
-    font-family: 'Ultra', serif;
-    text-transform: uppercase;
+    font-family: $title-font;
     color: #fff;
     background-color: #000;
 
-    font-size: rem(70,$text-bp-sm);
+    font-size: rem(60,$text-bp-sm);
     letter-spacing: rem(1,$text-bp-sm);
-    padding: rem(20,$text-bp-sm) 0;
+    padding: rem(36,$text-bp-sm) 0;
     width:100vw;
 
      @include bp-medium {
@@ -157,7 +154,7 @@
       }
 
     @include bp-large {
-        font-size: rem(24,$text-bp-lg);
+        font-size: rem(36,$text-bp-lg);
         letter-spacing: rem(1,$text-bp-lg);
         padding: rem(20,$text-bp-lg);
         width:auto;

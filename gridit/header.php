@@ -1,16 +1,26 @@
 <?php
 $cdn = "/";
-	$meta_title_default = "TVGla :: Idea Driven. People Focused.";
+	$meta_title_default = wp_title('|', false,'right');;
 	$meta_title = $meta_title_default;
-	$meta_desc_default = "TVGla is a digital marketing agency hell-bent on changing the landscape of our industry by setting trends, not following them. Our strategy is to engage your audience with the right message, in the right medium, at the right moment. From the desktop to the handheld, if it’s digital, we own it.";
+	$meta_desc_default = get_bloginfo('description');
 	$meta_desc = $meta_desc_default;
 	$site_url = "http://" . $_SERVER[HTTP_HOST];
 	$meta_url = "http://" . $_SERVER[HTTP_HOST] . $_SERVER['REQUEST_URI'];
-	$meta_img_default = $site_url . '/images/f7_avatar.jpg';
-	$meta_img = $meta_img_default;
+
 	global $segments;
 	$segments = explode('/', trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/')); 
 	$template_uri = get_template_directory_uri();
+
+	$meta_img_default = $template_uri . '/build/img/chitone_records_share.jpg';
+	$meta_img = $meta_img_default;
+
+	if ( is_single() ) {
+		$meta_img = get_the_post_thumbnail_url($post->ID, "share");
+		$meta_desc = get_the_excerpt();	
+	}
+
+	
+	
 	?>
 
 <!DOCTYPE html>
@@ -24,16 +34,31 @@ $cdn = "/";
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.1/TweenMax.min.js"></script>
 
 		<script src="<?php echo get_template_directory_uri(); ?>/build/js/main.min.js"></script>
-		<link href="https://fonts.googleapis.com/css?family=Domine:400,700" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Ultra" rel="stylesheet">
-		<?php wp_head(); ?>
+		<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+		<title><?php echo $meta_title; ?></title>
+
+		<meta name="description" content="<?php echo $meta_desc; ?>"> 
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+		<meta property="og:title" content="<?php echo $meta_title; ?>" />
+		<meta property="og:description" content="<?php echo $meta_desc; ?>" />
+		<meta property="og:url" content="<?php echo $meta_url; ?>"/>
+		<meta property="og:image" content="<?php echo $meta_img; ?>" />
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@chi-tone">
+		<meta name="twitter:creator" content="@chi-tone">
+		<meta name="twitter:url" content="<?php echo $meta_url; ?>">
+
+		<meta name="twitter:description" content="<?php echo $meta_desc; ?>">
+		<meta name="twitter:image" content="<?php echo $meta_img; ?>">
+
 	</head>
-	<body <?php body_class(); ?>>
+	<body>
 	<nav>
 		<a href="/">
-			<div id="navLogo">	
-				<img src="<?php echo $template_uri; ?>/build/img/site_logo.jpg" alt="Laughing House Prodcutions Logo"/>
-			</div>	
+			<div id="navLogo" style="background-image: url(<?php echo get_header_image(); ?>)"></div>	
 		</a>
 		<div id="navButtons">
 			<div id="navBtnHolder">
@@ -76,5 +101,6 @@ $cdn = "/";
 		<div id="navMenuBtn" class="fa fa-bars" ></div>
       	<div id="navMenuCloseBtn" class="fa fa-times" ></div>
 	</nav>
+	
 	<div id="site">
 		<div id="siteHolder">

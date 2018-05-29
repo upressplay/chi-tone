@@ -18,9 +18,9 @@
 								$output  .= '<a href="'. $link .'" data-postid="'.$post->ID.'" class="'.$cat .' post" >';	
 							}
 							
-							$output  .= '<div class="pageThumb'.$thumb_layout .'" >';
+							$output  .= '<div class="pageThumb '.$thumb_layout .'" >';
 							if($show_img) {
-								$output  .= '<div class="'.$thumb_size.'"><img src="'. $thumb .'" alt="'.$title.'"/></div>';	
+								$output  .= '<div class="pageThumbImg '.$thumb_size.'"><img src="'. $thumb .'" alt="'.$title.'"/></div>';	
 							}
 							if($show_title || $show_date || $show_body || $show_summary) {
 								$output  .= '<div class="pageThumbInfo">';	

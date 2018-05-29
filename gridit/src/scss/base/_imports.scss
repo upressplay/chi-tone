@@ -19,3 +19,12 @@
 
 // Font Awesome
 // @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+// 
+@font-face {
+    font-family: 'californiamedium';
+    src: url('../fonts/California.ttf') format('ttf'),
+   		 url('../fonts/california-webfont.woff2') format('woff2'),
+         url('../fonts/california-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

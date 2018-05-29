@@ -1,66 +1,57 @@
-<?php 
-	get_header(); 
+<?php  get_header(); 
+	$section_link = get_sub_field('section_page');
+	$page_poster = get_field('page_poster');
+	
+?>
 
+<?php if ( have_posts() ) : ?>
+	<?php while ( have_posts() ) : the_post();?>	
+		<?php if ( has_post_thumbnail() ) : ?>
+			<div class="headerImg" style="background-image:url(<?php echo get_the_post_thumbnail_url($post->ID, "header"); ?>)"></div>
+		<?php endif; ?>
 
-	if ( have_posts() ) {
-		while ( have_posts() ) {
+		<?php if(!is_front_page() ) : ?>
+				<h1 class="pageSecTitle"><?php echo get_the_title() ?> </h1>	
+		<?php endif; ?>
+		<div class="pageShare">
+			SHARE: 
+			<div class="pageSocialBtn share" data-type="facebook" data-title="<?php echo get_the_title($post->ID) ?>" data-url="<?php echo get_permalink($post->ID) ?>">
+				<span class="fab fa-facebook-square" aria-hidden="true" ></span>
+				<span class="screen-reader-text">Facebook</span>
+			</div>
+			<div class="pageSocialBtn share" data-type="twitter" data-title="<?php echo get_the_title($post->ID) ?>" data-url="<?php echo get_permalink($post->ID) ?>">
+				<span class="fab fa-twitter-square" aria-hidden="true" ></span>
+				<span class="screen-reader-text">Twitter</span>
+			</div>
+		</div><!-- pageShare -->
+		<?php if( have_rows('page_links') ) : ?>
+			<div class="pageLinks">
+				<?php while( have_rows('page_links') ) : the_row(); ?>
+					<?php if( get_sub_field('page_link_icon') !== "" ) : ?>
+						<div class="socialBtn share">
+                          <span class="<?php echo get_sub_field('page_link_icon'); ?>" aria-hidden="true" ></span>
+                          <span class="screen-reader-text"><?php echo get_sub_field('page_link_txt'); ?></span>
+                        </div>
+					<?php else: ?>
+					<a href="<?php echo get_sub_field('page_link'); ?>" target="_blank" class="pageLink">
+						<?php echo get_sub_field('page_link_txt'); ?>
+					</a>
+					<?php endif; ?>	
+				<?php endwhile; ?>	
+			</div><!-- pageLinks -->
+		<?php endif; ?>	
 
-			the_post(); 
+		<?php echo $content; ?>
 
-			$output = ""; 
+		<?php $content = get_the_content($post->ID); if(!empty_content($content)) : ?>
+    		<div class="pageBody">
+    		<?php the_content(); ?>
+    		</div><!-- pageBody -->
+    	<?php endif; ?>	
+
+		<?php 
 			
-			if ( has_post_thumbnail() ) {
-				$output  .=  '<div class="headerImg" style="background-image:url('.  get_the_post_thumbnail_url($post->ID, "header") .')"></div>'; 
-			}
-			if(!is_front_page()){
-				$output  .=  '<h1 class="pageSecTitle"> '.get_the_title().' </h1>';	
-			}
-
-			$section_link = get_sub_field('section_page');
-			$page_poster = get_field('page_poster');
-			$content = get_the_content();
-			$output  .=  '<div class="pageHeader">'; 
-			
-		    if($page_poster != "" || have_rows('page_links') ) {
-		    	if(!empty_content($content)) {
-			    	$output  .=  '<div class="pageInfoBody">'; 
-			    	$output  .=  $content; 
-			    	$output  .=  '</div><!-- pageInfoBody -->';
-			    }
-
-		    	$output  .=  '<div class="pageInfo">'; 
-		    	//print_r($page_poster);
-				if($page_poster != "") {
-					$output  .= '<a href="'.$page_poster['sizes']['large'].'" target="_blank">'; 
-					$output  .= '<div class="pagePoster">'; 
-					$output  .= '<img src="'.$page_poster['sizes']['medium'].'">';
-					$output  .= '</div>'; 
-					$output  .= '</a>'; 	
-				}
-				if( have_rows('page_links') ) {		
-					$output  .=  '<div class="pageLinks">';  
-			    	while( have_rows('page_links') ) {
-
-			    		the_row(); 
-			    		$output  .=  '<a href="'.get_sub_field('page_link').'" target="_blank" class="pageLink">'; 
-						$output  .=  get_sub_field('page_link_txt');
-						$output  .=  '</a>'; 
-			    	}
-			    	$output  .=  '</div>'; 
-			    }
-			    $output  .=  '</div><!-- pageInfo -->';
-
-		    } else {
-		    	if(!empty_content($content)) {
-		    		$output  .=  '<div class="pageBody">'; 
-		    		$output  .=  $content; 
-		    		$output  .=  '</div><!-- pageBody -->';	
-		    	}
-		    	
-		    }
-			 
-		   
-			$output  .=  '</div><!-- pageHeader -->'; 
+		    
 
 			if( have_rows('page_gallery') ) {		 
 		    	while( have_rows('page_gallery') ) {
@@ -175,9 +166,8 @@
 					wp_reset_postdata();
 				}
 			}
-		}
-	}
-	echo $output;
-
-	get_footer();
+			echo $output;
 ?>
+<?php endwhile; ?>
+<?php endif; ?>
+<?php get_footer(); ?>

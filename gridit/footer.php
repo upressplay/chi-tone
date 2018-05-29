@@ -1,7 +1,7 @@
 	
 		<footer id="footer" role="contentinfo">
 		<div id="copyright">
-			©Laughing House Productions
+			©2018 Chi-Tone Records
 		</div>
 	</footer>
 	</div><!-- end siteHolder -->
