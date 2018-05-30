@@ -31,7 +31,7 @@ html {
     height:100vh;
 }
 
-#siteHolder {
+#site-holder {
     width:100vw;
     min-height:100vh;
     overflow-x:hidden;
@@ -42,7 +42,12 @@ html {
     @include bp-large {
     }
 }
+#site-content {
+    display: inline-block;
+    width:100vw;
+    text-align: center;
 
+}
 
 img {
     width:100%;

@@ -18,9 +18,6 @@ $cdn = "/";
 		$meta_img = get_the_post_thumbnail_url($post->ID, "share");
 		$meta_desc = get_the_excerpt();	
 	}
-
-	
-	
 	?>
 
 <!DOCTYPE html>
@@ -54,53 +51,10 @@ $cdn = "/";
 		<meta name="twitter:description" content="<?php echo $meta_desc; ?>">
 		<meta name="twitter:image" content="<?php echo $meta_img; ?>">
 
+		<link rel="shortcut icon" href="<?php echo get_site_icon_url(); ?>" />
 	</head>
 	<body>
-	<nav>
-		<a href="/">
-			<div id="navLogo" style="background-image: url(<?php echo get_header_image(); ?>)"></div>	
-		</a>
-		<div id="navButtons">
-			<div id="navBtnHolder">
-			<?php
-				$menu_items = wp_get_nav_menu_items( 'Top Menu' );
-				foreach ( (array) $menu_items as $key => $menu_item ) {
-				    $title = $menu_item->title;
-				    $url = $menu_item->url;
-				    $attr_title = $menu_item->attr_title;
-				    $btn_class = "navBtn";
-				    //if($attr_title == $segments[0]) $btn_class = "activeBtn";
-				    echo '<a href="' . $url . '"><div class="' . $btn_class . '">' . $title . '</div></a>';
-				}
-			?>
-			</div>
-			<div id="socialBtnHolder">
-			<?php
-				$btn_class;
-				$menu_items = wp_get_nav_menu_items( 'Social Links Menu' );
-				foreach ( (array) $menu_items as $key => $menu_item ) {
-				    $title = $menu_item->title;
-				    $url = $menu_item->url;
-				    $attr_title = $menu_item->attr_title;
-				    $icon_class = get_field('icon_class', $menu_item);
-				    $btn_class = "socialBtn ";
-
-				   	echo '<a href="'.$url.'" target="_blank" >
-                        <div class="'.$btn_class.'">
-                          <span class="'.$icon_class.'" aria-hidden="true" ></span>
-                          <span class="screen-reader-text">'.$title.'</span>
-                        </div>
-                    </a>'; 
-				}
-			?>
-			</div>
-		</div>
-
-		
-		
-		<div id="navMenuBtn" class="fa fa-bars" ></div>
-      	<div id="navMenuCloseBtn" class="fa fa-times" ></div>
-	</nav>
+	<?php include( locate_template( 'nav.php', false, false ) ); ?> 
 	
 	<div id="site">
-		<div id="siteHolder">
+		<div id="site-holder">

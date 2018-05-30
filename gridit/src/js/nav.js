@@ -20,16 +20,16 @@
     	
         trace.log(id+" render utils.getBreakPoint = "+utils.getBreakPoint());
 
-        dom.navButtons = $("#navButtons");
-        dom.navMenuCloseBtn = $("#navMenuCloseBtn");    
-        dom.navMenuBtn = $("#navMenuBtn");
+        dom.navBtns = $("#nav-btns");
+        dom.menuBtnClose = $("#menu-btn-close");    
+        dom.menuBtn = $("#menu-btn");
 
 
-        dom.navMenuBtn.click(function(event) {
+        dom.menuBtn.click(function(event) {
             openMenu();
         });
 
-        dom.navMenuCloseBtn.click(function(event) {
+        dom.menuBtnClose.click(function(event) {
             openMenu();
         });
 
@@ -43,12 +43,12 @@
 
         if(menuOpen) {
             menuOpen = false;
-            TweenMax.to(dom.navButtons, 0.5, {opacity:0, onComplete:utils.divDisplay, onCompleteParams:[undefined,"none",dom.navButtons], ease:"Power1.easeIn", overwrite:2});
-            TweenMax.to(dom.navMenuCloseBtn, 0.5, {autoAlpha:0, ease:"Power1.easeIn", overwrite:2});
+            TweenMax.to(dom.navBtns, 0.5, {opacity:0, onComplete:utils.divDisplay, onCompleteParams:[undefined,"none",dom.navBtns], ease:"Power1.easeIn", overwrite:2});
+            TweenMax.to(dom.menuBtnClose, 0.5, {autoAlpha:0, ease:"Power1.easeIn", overwrite:2});
         } else {
             menuOpen = true;
-            TweenMax.to(dom.navButtons, 0.5, {opacity:1, onStart:utils.divDisplay, onStartParams:[undefined,"block",dom.navButtons], ease:"Power1.easeIn", overwrite:2});
-            TweenMax.to(dom.navMenuCloseBtn, 0.5, {autoAlpha:1, ease:"Power1.easeIn", overwrite:2});
+            TweenMax.to(dom.navBtns, 0.5, {opacity:1, onStart:utils.divDisplay, onStartParams:[undefined,"block",dom.navBtns], ease:"Power1.easeIn", overwrite:2});
+            TweenMax.to(dom.menuBtnClose, 0.5, {autoAlpha:1, ease:"Power1.easeIn", overwrite:2});
             
         }
         

@@ -122,11 +122,16 @@ html {
   width: 100vw;
   height: 100vh; }
 
-#siteHolder {
+#site-holder {
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto; }
+
+#site-content {
+  display: inline-block;
+  width: 100vw;
+  text-align: center; }
 
 img {
   width: 100%;
@@ -166,68 +171,27 @@ a:active {
   top: -9999px;
   left: -9999px; }
 
-#navLogo {
+#nav-logo {
   background-position: top center;
   background-size: auto 100%;
   background-repeat: no-repeat;
   width: 75rem;
   height: 35rem; }
   @media only screen and (min-width: 751px) {
-    #navLogo {
+    #nav-logo {
       background-size: 100% auto;
       width: 127rem;
       height: 24rem; } }
   @media only screen and (min-width: 1271px) {
-    #navLogo {
+    #nav-logo {
       background-size: 100% auto;
       width: 160rem;
       height: 30rem; } }
+  #nav-logo img {
+    width: 100%;
+    height: auto; }
 
-#navLogo img {
-  width: 100%;
-  height: auto; }
-
-#navMenuBtn {
-  position: fixed;
-  z-index: 1001;
-  color: #FFF;
-  background-color: #000;
-  font-size: 4rem;
-  padding: 4rem;
-  visibility: visible;
-  right: 1.8rem;
-  top: 1.8rem; }
-  @media only screen and (min-width: 751px) {
-    #navMenuBtn {
-      visibility: hidden;
-      font-size: 1.8rem;
-      padding: 0 1rem; } }
-  @media only screen and (min-width: 1271px) {
-    #navMenuBtn {
-      visibility: hidden;
-      font-size: 1.8rem;
-      padding: 0 1rem; } }
-
-#navMenuCloseBtn {
-  position: fixed;
-  z-index: 1003;
-  color: #fff;
-  background-color: #000;
-  font-size: 5.5rem;
-  padding: 3rem;
-  visibility: hidden;
-  right: 1.8rem;
-  top: 1.8rem; }
-  @media only screen and (min-width: 751px) {
-    #navMenuCloseBtn {
-      font-size: 1.8rem;
-      padding: 0 1rem; } }
-  @media only screen and (min-width: 1271px) {
-    #navMenuCloseBtn {
-      font-size: 1.8rem;
-      padding: 0 1rem; } }
-
-#navButtons {
+#nav-btns {
   position: fixed;
   z-index: 1002;
   background-color: #000;
@@ -240,7 +204,7 @@ a:active {
   width: 100%;
   height: 100%; }
   @media only screen and (min-width: 751px) {
-    #navButtons {
+    #nav-btns {
       position: static;
       display: block;
       opacity: 1;
@@ -250,7 +214,7 @@ a:active {
       width: auto;
       height: auto; } }
   @media only screen and (min-width: 1271px) {
-    #navButtons {
+    #nav-btns {
       position: static;
       display: block;
       opacity: 1;
@@ -260,26 +224,26 @@ a:active {
       width: auto;
       height: auto; } }
 
-#navBtnHolder {
+#nav-btns-holder {
   display: inline-block;
   vertical-align: top; }
 
-#socialBtnHolder {
+#social-btns-holder {
   display: inline-block;
   vertical-align: top;
   text-align: center;
   width: 100%;
   padding-top: 4rem; }
   @media only screen and (min-width: 751px) {
-    #socialBtnHolder {
+    #social-btns-holder {
       width: auto;
       padding-top: 0; } }
   @media only screen and (min-width: 1271px) {
-    #socialBtnHolder {
+    #social-btns-holder {
       width: auto;
       padding-top: 0; } }
 
-.navBtn {
+.nav-btn {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
@@ -291,24 +255,24 @@ a:active {
   padding: 3.6rem 0;
   width: 100vw; }
   @media only screen and (min-width: 751px) {
-    .navBtn {
+    .nav-btn {
       font-size: 1.9rem;
       letter-spacing: 0.1rem;
       padding: 1.6rem;
       width: auto; } }
   @media only screen and (min-width: 1271px) {
-    .navBtn {
+    .nav-btn {
       font-size: 3.6rem;
       letter-spacing: 0.1rem;
       padding: 2rem;
       width: auto; } }
 
-.navBtn:hover, .socialBtn:hover {
+.nav-btn:hover, .social-btn:hover {
   color: #000;
   background-color: #fff;
   text-decoration: none; }
 
-.socialBtn {
+.social-btn {
   cursor: pointer;
   display: inline-block;
   vertical-align: middle;
@@ -317,129 +281,167 @@ a:active {
   font-size: 7rem;
   padding: 0 2.5rem; }
   @media only screen and (min-width: 751px) {
-    .socialBtn {
+    .social-btn {
       font-size: 2.2rem;
       padding: 1.6rem 0.8rem; } }
   @media only screen and (min-width: 1271px) {
-    .socialBtn {
+    .social-btn {
       font-size: 2.7rem;
       padding: 2rem 1rem; } }
 
-.headerImg, .postHeaderImg {
+#menu-btn {
+  position: fixed;
+  z-index: 1001;
+  color: #FFF;
+  background-color: #000;
+  font-size: 4rem;
+  padding: 4rem;
+  visibility: visible;
+  right: 1.8rem;
+  top: 1.8rem; }
+  @media only screen and (min-width: 751px) {
+    #menu-btn {
+      visibility: hidden;
+      font-size: 1.8rem;
+      padding: 0 1rem; } }
+  @media only screen and (min-width: 1271px) {
+    #menu-btn {
+      visibility: hidden;
+      font-size: 1.8rem;
+      padding: 0 1rem; } }
+
+#menu-btn-close {
+  position: fixed;
+  z-index: 1003;
+  color: #fff;
+  background-color: #000;
+  font-size: 5.5rem;
+  padding: 3rem;
+  visibility: hidden;
+  right: 1.8rem;
+  top: 1.8rem; }
+  @media only screen and (min-width: 751px) {
+    #menu-btn-close {
+      font-size: 1.8rem;
+      padding: 0 1rem; } }
+  @media only screen and (min-width: 1271px) {
+    #menu-btn-close {
+      font-size: 1.8rem;
+      padding: 0 1rem; } }
+
+.header-img, .post-header-img {
   display: block;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: auto 100%;
   width: 75rem; }
   @media only screen and (min-width: 751px) {
-    .headerImg, .postHeaderImg {
+    .header-img, .post-header-img {
       background-size: 100% auto;
       width: 127rem; } }
   @media only screen and (min-width: 1271px) {
-    .headerImg, .postHeaderImg {
+    .header-img, .post-header-img {
       background-size: 100% auto;
       width: 160rem; } }
 
-.headerImg {
+.header-img {
   height: 37.5rem; }
   @media only screen and (min-width: 751px) {
-    .headerImg {
+    .header-img {
       height: 48rem; } }
   @media only screen and (min-width: 1271px) {
-    .headerImg {
+    .header-img {
       height: 60rem; } }
 
-.pageHeader {
+.page-header {
   display: inline-block;
   background-color: #fff;
   color: #000;
   text-align: left;
   width: 100%; }
 
-.pageInfo {
+.page-info {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   background-color: #000; }
 
-.pagePoster {
+.page-poster {
   width: 20rem;
   margin: 3rem 3rem 1rem 3rem; }
   @media only screen and (min-width: 751px) {
-    .pagePoster {
+    .page-poster {
       width: 15rem;
       margin: 3rem 3rem 1rem 3rem; } }
   @media only screen and (min-width: 1271px) {
-    .pagePoster {
+    .page-poster {
       width: 15rem;
       margin: 3rem 5rem 1rem 5rem; } }
 
-.pageLinks {
+.page-links {
   text-align: center;
   margin-bottom: 2.5rem; }
   @media only screen and (min-width: 751px) {
-    .pageLinks {
+    .page-links {
       margin-bottom: 2.5rem; } }
   @media only screen and (min-width: 1271px) {
-    .pageLinks {
+    .page-links {
       margin-bottom: 2.5rem; } }
+  .page-links a {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-weight: 700;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+    padding: 1rem;
+    margin: 0.5rem 1rem;
+    width: 18rem;
+    transition: all 0.3s; }
+    @media only screen and (min-width: 751px) {
+      .page-links a {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        padding: 1.5rem;
+        margin: 0.5rem 1rem;
+        width: 13rem; } }
+    @media only screen and (min-width: 1271px) {
+      .page-links a {
+        font-size: 2.1rem;
+        line-height: 2.8rem;
+        padding: 1.5rem;
+        margin: 0.5rem 1rem;
+        width: 15rem; } }
+  .page-links a:hover {
+    background-color: #000;
+    color: #fff; }
 
-.pageLinks a {
-  display: inline-block;
-  vertical-align: middle;
-  font-family: "Yanone Kaffeesatz", sans-serif;
-  font-weight: 700;
-  background-color: #fff;
-  color: #000;
-  text-align: center;
-  font-size: 2.8rem;
-  line-height: 3.6rem;
-  padding: 1rem;
-  margin: 0.5rem 1rem;
-  width: 18rem;
-  transition: all 0.3s; }
-  @media only screen and (min-width: 751px) {
-    .pageLinks a {
-      font-size: 1.4rem;
-      line-height: 1.8rem;
-      padding: 1.5rem;
-      margin: 0.5rem 1rem;
-      width: 13rem; } }
-  @media only screen and (min-width: 1271px) {
-    .pageLinks a {
-      font-size: 2.1rem;
-      line-height: 2.8rem;
-      padding: 1.5rem;
-      margin: 0.5rem 1rem;
-      width: 15rem; } }
-
-.pageLinks a:hover {
-  background-color: #000;
-  color: #fff; }
-
-.pageBody, .pageInfoBody {
+.page-body, .page-info-body {
   color: #000;
   background-color: #fff;
   padding: 3rem; }
   @media only screen and (min-width: 751px) {
-    .pageBody, .pageInfoBody {
+    .page-body, .page-info-body {
       padding: 3rem; } }
   @media only screen and (min-width: 1271px) {
-    .pageBody, .pageInfoBody {
+    .page-body, .page-info-body {
       padding: 5rem; } }
 
-.pageBody {
+.page-body {
   vertical-align: middle;
   text-align: center;
   color: #000;
   background-color: #fff; }
 
-.pageInfoBody {
+.page-info-body {
   display: table-cell;
   vertical-align: middle;
   text-align: center; }
 
-.pageSecTitle {
+.page-sec-title {
   font-family: "californiamedium";
   text-align: center;
   text-transform: uppercase;
@@ -449,218 +451,61 @@ a:active {
   letter-spacing: 0.2rem;
   padding: 2rem 0; }
   @media only screen and (min-width: 751px) {
-    .pageSecTitle {
+    .page-sec-title {
       font-size: 4.8rem;
       line-height: 5.8rem;
       letter-spacing: 0.2rem;
       padding: 1.6rem; } }
   @media only screen and (min-width: 1271px) {
-    .pageSecTitle {
+    .page-sec-title {
       font-size: 6rem;
       line-height: 8rem;
       letter-spacing: 0.2rem;
       padding: 2rem 0 1rem 0; } }
+  .page-sec-title a {
+    display: block;
+    color: #fff;
+    background-color: #000;
+    transition: all 0.3s; }
+  .page-sec-title a:hover {
+    color: #000;
+    background-color: #fff; }
 
-.pageSecTitleLink a {
-  display: block;
+.page-share {
+  text-align: center;
+  margin: 0.5rem 0; }
+  @media only screen and (min-width: 751px) {
+    .page-share {
+      margin: 0.5rem 0; } }
+  @media only screen and (min-width: 1271px) {
+    .page-share {
+      margin: 0.5rem 0; } }
+
+.page-social-btn {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
   color: #fff;
   background-color: #000;
-  transition: all 0.3s; }
+  font-size: 5.5rem;
+  padding: 1rem 1rem; }
+  @media only screen and (min-width: 751px) {
+    .page-social-btn {
+      font-size: 2.2rem;
+      padding: 0.8rem 0.8rem; } }
+  @media only screen and (min-width: 1271px) {
+    .page-social-btn {
+      font-size: 2.7rem;
+      padding: 1rem 1rem; } }
 
-.pageSecTitleLink a:hover {
-  color: #000;
-  background-color: #fff; }
-
-.pageRow {
+.page-row {
   text-align: center;
   background-color: #000; }
 
-.galleryImg {
+.gallery-img {
   display: inline-block;
   vertical-align: top;
   cursor: pointer; }
-
-#siteContent {
-  display: inline-block;
-  width: 100vw;
-  text-align: center; }
-
-.pageThumb {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
-  margin: 1rem; }
-  @media only screen and (min-width: 751px) {
-    .pageThumb {
-      margin: 1rem; } }
-  @media only screen and (min-width: 1271px) {
-    .pageThumb {
-      margin: 1rem; } }
-  .pageThumb.sm {
-    text-align: center;
-    width: 35rem;
-    height: auto; }
-    @media only screen and (min-width: 751px) {
-      .pageThumb.sm {
-        width: 14.6rem;
-        height: 14.6rem; } }
-    @media only screen and (min-width: 1271px) {
-      .pageThumb.sm {
-        width: 18.5rem; } }
-  .pageThumb.tall {
-    text-align: center;
-    width: 35rem;
-    height: auto; }
-    @media only screen and (min-width: 751px) {
-      .pageThumb.tall {
-        width: 14.6rem; } }
-    @media only screen and (min-width: 1271px) {
-      .pageThumb.tall {
-        width: 18.5rem; } }
-  .pageThumb.vert {
-    text-align: center;
-    width: 73rem;
-    height: auto; }
-    @media only screen and (min-width: 751px) {
-      .pageThumb.vert {
-        width: 29.25rem; } }
-    @media only screen and (min-width: 1271px) {
-      .pageThumb.vert {
-        width: 37.5rem; } }
-  .pageThumb.horz {
-    text-align: center;
-    width: 73rem;
-    height: auto; }
-    @media only screen and (min-width: 751px) {
-      .pageThumb.horz {
-        text-align: left;
-        width: 59rem; } }
-    @media only screen and (min-width: 1271px) {
-      .pageThumb.horz {
-        text-align: left;
-        width: 75.5rem; } }
-
-.pageThumbImg {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  overflow: hidden; }
-  .pageThumbImg.rect {
-    width: 75rem;
-    height: 37.5rem; }
-    @media only screen and (min-width: 751px) {
-      .pageThumbImg.rect {
-        width: 31.25rem;
-        height: 15.875rem; } }
-    @media only screen and (min-width: 1271px) {
-      .pageThumbImg.rect {
-        width: 38.5rem;
-        height: 20rem; } }
-  .pageThumbImg.sq {
-    width: 75rem;
-    height: 75rem; }
-    @media only screen and (min-width: 751px) {
-      .pageThumbImg.sq {
-        width: 31.25rem;
-        height: 31.25rem; } }
-    @media only screen and (min-width: 1271px) {
-      .pageThumbImg.sq {
-        width: 37.5rem;
-        height: 37.5rem; } }
-  .pageThumbImg.sqSm {
-    width: 25rem;
-    height: 25rem; }
-    @media only screen and (min-width: 751px) {
-      .pageThumbImg.sqSm {
-        width: 16rem;
-        height: 16rem; } }
-    @media only screen and (min-width: 1271px) {
-      .pageThumbImg.sqSm {
-        width: 19rem;
-        height: 19rem; } }
-  .pageThumbImg.tall {
-    width: 37.5rem;
-    height: 72.5rem; }
-    @media only screen and (min-width: 751px) {
-      .pageThumbImg.tall {
-        width: 16rem;
-        height: 31.25rem; } }
-    @media only screen and (min-width: 1271px) {
-      .pageThumbImg.tall {
-        width: 19.5rem;
-        height: 38.5rem; } }
-
-.pageThumbInfo {
-  display: inline-block;
-  vertical-align: middle;
-  width: 75rem; }
-  @media only screen and (min-width: 751px) {
-    .pageThumbInfo {
-      width: 27.5rem; } }
-  @media only screen and (min-width: 1271px) {
-    .pageThumbInfo {
-      width: 36.5rem; } }
-
-.pageThumbTitle {
-  font-family: "californiamedium";
-  color: #fff;
-  background-color: #000;
-  font-size: 4rem;
-  line-height: 4.8rem;
-  padding: 3rem 5rem; }
-  @media only screen and (min-width: 751px) {
-    .pageThumbTitle {
-      font-size: 2.8rem;
-      line-height: 3.6rem;
-      padding: 0.8rem 1.6rem; } }
-  @media only screen and (min-width: 1271px) {
-    .pageThumbTitle {
-      font-size: 3.6rem;
-      line-height: 4.4rem;
-      padding: 1rem 2rem; } }
-
-.pageThumbDate {
-  color: #fff;
-  font-family: "Yanone Kaffeesatz", sans-serif;
-  font-weight: 700;
-  font-size: 3rem;
-  line-height: 4rem;
-  padding-top: 1rem; }
-  @media only screen and (min-width: 751px) {
-    .pageThumbDate {
-      font-size: 1.8rem;
-      line-height: 2.4rem;
-      padding-top: 0.8rem; } }
-  @media only screen and (min-width: 1271px) {
-    .pageThumbDate {
-      font-size: 1.8rem;
-      line-height: 2.4rem;
-      padding-top: 1rem; } }
-
-.pageThumbTime {
-  color: #fff;
-  font-family: 'Domine', serif;
-  font-size: 3rem;
-  line-height: 4.8rem; }
-  @media only screen and (min-width: 751px) {
-    .pageThumbTime {
-      font-size: 1.6rem;
-      line-height: 2.1rem; } }
-  @media only screen and (min-width: 1271px) {
-    .pageThumbTime {
-      font-size: 1.6rem;
-      line-height: 2.8rem; } }
-
-.pageThumbBody, .postBody {
-  color: #fff;
-  background-color: #000;
-  padding: 0 4rem 4rem 4rem; }
-  @media only screen and (min-width: 751px) {
-    .pageThumbBody, .postBody {
-      padding: 0 1.6rem 1.6rem 1.6rem; } }
-  @media only screen and (min-width: 1271px) {
-    .pageThumbBody, .postBody {
-      padding: 0 2rem 2rem 2rem; } }
 
 #postOverlay {
   background-color: #000;
@@ -758,45 +603,195 @@ a:active {
       bottom: 50%;
       left: 3rem; } }
 
-.postClose {
+.post-close {
   top: 3rem;
   right: 3rem;
   transition: all 0.3s; }
   @media only screen and (min-width: 751px) {
-    .postClose {
+    .post-close {
       top: 3rem;
       right: 3rem; } }
   @media only screen and (min-width: 1271px) {
-    .postClose {
+    .post-close {
       top: 3rem;
       right: 3rem; } }
 
-.pageShare {
-  text-align: center;
-  margin: 0.5rem 0; }
-  @media only screen and (min-width: 751px) {
-    .pageShare {
-      margin: 0.5rem 0; } }
-  @media only screen and (min-width: 1271px) {
-    .pageShare {
-      margin: 0.5rem 0; } }
-
-.pageSocialBtn {
-  cursor: pointer;
+.page-thumb {
   display: inline-block;
   vertical-align: middle;
+  overflow: hidden;
+  margin: 1rem; }
+  @media only screen and (min-width: 751px) {
+    .page-thumb {
+      margin: 1rem; } }
+  @media only screen and (min-width: 1271px) {
+    .page-thumb {
+      margin: 1rem; } }
+  .page-thumb.sm {
+    text-align: center;
+    width: 35rem;
+    height: auto; }
+    @media only screen and (min-width: 751px) {
+      .page-thumb.sm {
+        width: 14.6rem;
+        height: 14.6rem; } }
+    @media only screen and (min-width: 1271px) {
+      .page-thumb.sm {
+        width: 18.5rem; } }
+  .page-thumb.tall {
+    text-align: center;
+    width: 35rem;
+    height: auto; }
+    @media only screen and (min-width: 751px) {
+      .page-thumb.tall {
+        width: 14.6rem; } }
+    @media only screen and (min-width: 1271px) {
+      .page-thumb.tall {
+        width: 18.5rem; } }
+  .page-thumb.vert {
+    text-align: center;
+    width: 73rem;
+    height: auto; }
+    @media only screen and (min-width: 751px) {
+      .page-thumb.vert {
+        width: 29.25rem; } }
+    @media only screen and (min-width: 1271px) {
+      .page-thumb.vert {
+        width: 37.5rem; } }
+  .page-thumb.horz {
+    text-align: center;
+    width: 73rem;
+    height: auto; }
+    @media only screen and (min-width: 751px) {
+      .page-thumb.horz {
+        text-align: left;
+        width: 59rem; } }
+    @media only screen and (min-width: 1271px) {
+      .page-thumb.horz {
+        text-align: left;
+        width: 75.5rem; } }
+
+.page-thumb .img {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden; }
+  .page-thumb .img.rect {
+    width: 75rem;
+    height: 37.5rem; }
+    @media only screen and (min-width: 751px) {
+      .page-thumb .img.rect {
+        width: 31.25rem;
+        height: 15.875rem; } }
+    @media only screen and (min-width: 1271px) {
+      .page-thumb .img.rect {
+        width: 38.5rem;
+        height: 20rem; } }
+  .page-thumb .img.sq {
+    width: 75rem;
+    height: 75rem; }
+    @media only screen and (min-width: 751px) {
+      .page-thumb .img.sq {
+        width: 31.25rem;
+        height: 31.25rem; } }
+    @media only screen and (min-width: 1271px) {
+      .page-thumb .img.sq {
+        width: 37.5rem;
+        height: 37.5rem; } }
+  .page-thumb .img.sqSm {
+    width: 25rem;
+    height: 25rem; }
+    @media only screen and (min-width: 751px) {
+      .page-thumb .img.sqSm {
+        width: 16rem;
+        height: 16rem; } }
+    @media only screen and (min-width: 1271px) {
+      .page-thumb .img.sqSm {
+        width: 19rem;
+        height: 19rem; } }
+  .page-thumb .img.tall {
+    width: 37.5rem;
+    height: 72.5rem; }
+    @media only screen and (min-width: 751px) {
+      .page-thumb .img.tall {
+        width: 16rem;
+        height: 31.25rem; } }
+    @media only screen and (min-width: 1271px) {
+      .page-thumb .img.tall {
+        width: 19.5rem;
+        height: 38.5rem; } }
+
+.page-thumb .info {
+  display: inline-block;
+  vertical-align: middle;
+  width: 75rem; }
+  @media only screen and (min-width: 751px) {
+    .page-thumb .info {
+      width: 27.5rem; } }
+  @media only screen and (min-width: 1271px) {
+    .page-thumb .info {
+      width: 36.5rem; } }
+
+.page-thumb .title {
+  font-family: "californiamedium";
   color: #fff;
   background-color: #000;
-  font-size: 5.5rem;
-  padding: 1rem 1rem; }
+  font-size: 4rem;
+  line-height: 4.8rem;
+  padding: 3rem 5rem; }
   @media only screen and (min-width: 751px) {
-    .pageSocialBtn {
-      font-size: 2.2rem;
-      padding: 0.8rem 0.8rem; } }
+    .page-thumb .title {
+      font-size: 2.8rem;
+      line-height: 3.6rem;
+      padding: 0.8rem 1.6rem; } }
   @media only screen and (min-width: 1271px) {
-    .pageSocialBtn {
-      font-size: 2.7rem;
-      padding: 1rem 1rem; } }
+    .page-thumb .title {
+      font-size: 3.6rem;
+      line-height: 4.4rem;
+      padding: 1rem 2rem; } }
+
+.page-thumb .date {
+  color: #fff;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 4rem;
+  padding-top: 1rem; }
+  @media only screen and (min-width: 751px) {
+    .page-thumb .date {
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      padding-top: 0.8rem; } }
+  @media only screen and (min-width: 1271px) {
+    .page-thumb .date {
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      padding-top: 1rem; } }
+
+.page-thumb .time {
+  color: #fff;
+  font-family: 'Domine', serif;
+  font-size: 3rem;
+  line-height: 4.8rem; }
+  @media only screen and (min-width: 751px) {
+    .page-thumb .time {
+      font-size: 1.6rem;
+      line-height: 2.1rem; } }
+  @media only screen and (min-width: 1271px) {
+    .page-thumb .time {
+      font-size: 1.6rem;
+      line-height: 2.8rem; } }
+
+.page-thumb .body, .post .body {
+  color: #fff;
+  background-color: #000;
+  padding: 0 4rem 4rem 4rem; }
+  @media only screen and (min-width: 751px) {
+    .page-thumb .body, .post .body {
+      padding: 0 1.6rem 1.6rem 1.6rem; } }
+  @media only screen and (min-width: 1271px) {
+    .page-thumb .body, .post .body {
+      padding: 0 2rem 2rem 2rem; } }
 
 .videos {
   cursor: pointer; }

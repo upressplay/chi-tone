@@ -1,4 +1,4 @@
-#navLogo {
+#nav-logo {
     background-position: top center;
     background-size: auto 100%;
     background-repeat: no-repeat;
@@ -17,61 +17,13 @@
         width:rem(1600,$text-bp-lg);
         height:rem(300,$text-bp-lg);
     }
-}
-#navLogo img {
-  width:100%;
-  height:auto;
-}
-
-#navMenuBtn {
-  position: fixed;
-  z-index: 1001;
-  color:#FFF;
-  background-color: #000;
-  font-size: rem(40,$text-bp-sm);
-  padding: rem(40,$text-bp-sm);
-  visibility:visible;
-
-  right:rem(18,$text-bp-sm);
-  top:rem(18,$text-bp-sm);
-
-  @include bp-medium {
-    visibility:hidden;
-    font-size: rem(18,$text-bp-md);
-    padding: 0 rem(10,$text-bp-md);
-  }
-
-  @include bp-large {
-    visibility:hidden;
-    font-size: rem(18,$text-bp-lg);
-    padding: 0 rem(10,$text-bp-lg);
-  }
+    img {
+      width:100%;
+      height:auto;
+    }
 }
 
-#navMenuCloseBtn {
-  position: fixed;
-  z-index: 1003;
-  color:#fff;
-  background-color: #000;
-  font-size: rem(55,$text-bp-sm);
-  padding: rem(30,$text-bp-sm);
-  visibility:hidden;
-
-  right:rem(18,$text-bp-sm);
-  top:rem(18,$text-bp-sm);
-
-  @include bp-medium {
-    font-size: rem(18,$text-bp-md);
-    padding: 0 rem(10,$text-bp-md);
-  }
-
-  @include bp-large {
-    font-size: rem(18,$text-bp-lg);
-    padding: 0 rem(10,$text-bp-lg);
-  }
-}
-
-#navButtons {
+#nav-btns {
 
     position: fixed;
     z-index: 1002;
@@ -110,12 +62,12 @@
     }
 }
 
-#navBtnHolder {
+#nav-btns-holder {
     display: inline-block;
     vertical-align: top;
 }
 
-#socialBtnHolder {
+#social-btns-holder {
     display: inline-block;
     vertical-align: top;
     text-align: center;
@@ -133,7 +85,7 @@
     }
 }
 
-.navBtn {
+.nav-btn {
     display: inline-block;
     vertical-align: middle;
     text-align: center;
@@ -161,14 +113,14 @@
     }
 }
 
-.navBtn:hover, .socialBtn:hover {
+.nav-btn:hover, .social-btn:hover {
     color: #000;
     background-color: #fff;
     text-decoration: none;
 }
 
 
-.socialBtn {
+.social-btn {
     cursor: pointer;
     display: inline-block;
     vertical-align: middle;
@@ -188,6 +140,53 @@
     }
 }
 
+#menu-btn {
+    position: fixed;
+    z-index: 1001;
+    color:#FFF;
+    background-color: #000;
+    font-size: rem(40,$text-bp-sm);
+    padding: rem(40,$text-bp-sm);
+    visibility:visible;
+
+    right:rem(18,$text-bp-sm);
+    top:rem(18,$text-bp-sm);
+
+    @include bp-medium {
+        visibility:hidden;
+        font-size: rem(18,$text-bp-md);
+        padding: 0 rem(10,$text-bp-md);
+    }
+
+    @include bp-large {
+        visibility:hidden;
+        font-size: rem(18,$text-bp-lg);
+        padding: 0 rem(10,$text-bp-lg);
+    }
+}
+
+#menu-btn-close {
+    position: fixed;
+    z-index: 1003;
+    color:#fff;
+    background-color: #000;
+    font-size: rem(55,$text-bp-sm);
+    padding: rem(30,$text-bp-sm);
+    visibility:hidden;
+
+    right:rem(18,$text-bp-sm);
+    top:rem(18,$text-bp-sm);
+
+    @include bp-medium {
+    font-size: rem(18,$text-bp-md);
+    padding: 0 rem(10,$text-bp-md);
+    }
+
+    @include bp-large {
+    font-size: rem(18,$text-bp-lg);
+    padding: 0 rem(10,$text-bp-lg);
+    }
+}
 
 
 

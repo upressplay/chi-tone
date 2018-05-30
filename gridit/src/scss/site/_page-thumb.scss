@@ -1,0 +1,226 @@
+.page-thumb {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    margin:rem(10,$text-bp-sm);
+
+    @include bp-medium {
+        margin:rem(10,$text-bp-md);
+    }
+
+    @include bp-large {
+        margin:rem(10,$text-bp-lg);
+    }
+
+    &.sm {
+        text-align: center;
+        width:rem(350,$text-bp-sm);
+        height: auto;
+
+        @include bp-medium {
+            width:rem(146,$text-bp-md);
+            height:rem(146,$text-bp-md);
+        }
+
+        @include bp-large {
+            width:rem(185,$text-bp-lg);
+        }
+    }
+    &.tall {
+        text-align: center;
+        width:rem(350,$text-bp-sm);
+        height: auto;
+
+        @include bp-medium {
+            width:rem(146,$text-bp-md);
+        }
+
+        @include bp-large {
+            width:rem(185,$text-bp-lg);
+        }
+    }
+    &.vert {
+        text-align: center;
+        width:rem(730,$text-bp-sm);
+        height: auto;
+
+        @include bp-medium {
+            width:rem(292.5,$text-bp-md);
+        }
+
+        @include bp-large {
+            width:rem(375,$text-bp-lg);
+        }
+    }
+    
+    &.horz {
+        text-align: center;
+
+        width:rem(730,$text-bp-sm);
+        height: auto;
+
+        @include bp-medium {
+            text-align: left;
+            width:rem(590,$text-bp-md);
+        }
+
+        @include bp-large {
+            text-align: left;
+            width:rem(755,$text-bp-lg);
+        }
+    }
+
+}
+
+
+.page-thumb .img {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    overflow: hidden;
+
+    &.rect {
+        width:rem(750,$text-bp-sm);
+        height:rem(375,$text-bp-sm);
+
+        @include bp-medium {
+            width:rem(312.5,$text-bp-md);
+            height:rem(158.75,$text-bp-md);
+        }
+
+        @include bp-large {
+            width:rem(385,$text-bp-lg);
+            height:rem(200,$text-bp-lg);
+        }
+    }
+    &.sq {
+        width:rem(750,$text-bp-sm);
+        height:rem(750,$text-bp-sm);
+
+        @include bp-medium {
+            width:rem(312.5,$text-bp-md);
+            height:rem(312.5,$text-bp-md);
+        }
+
+        @include bp-large {
+            width:rem(375,$text-bp-lg);
+            height:rem(375,$text-bp-lg);
+        }
+    }
+    &.sqSm {
+        width:rem(250,$text-bp-sm);
+        height:rem(250,$text-bp-sm);
+
+        @include bp-medium {
+            width:rem(160,$text-bp-md);
+            height:rem(160,$text-bp-md);
+        }
+
+        @include bp-large {
+            width:rem(190,$text-bp-lg);
+            height:rem(190,$text-bp-lg);
+        }
+    }
+    &.tall {
+
+        width:rem(375,$text-bp-sm);
+        height:rem(725,$text-bp-sm);
+
+        @include bp-medium {
+            width:rem(160,$text-bp-md);
+            height:rem(312.5,$text-bp-md);
+        }
+
+        @include bp-large {
+            width:rem(195,$text-bp-lg);
+            height:rem(385,$text-bp-lg);
+        }
+    }
+}
+.page-thumb .info {
+    display: inline-block;
+    vertical-align: middle;
+
+    width:rem(750,$text-bp-sm);
+
+    @include bp-medium {
+        width:rem(275,$text-bp-md);
+    }
+
+    @include bp-large {
+        width:rem(365,$text-bp-lg);
+    }
+
+}
+.page-thumb .title {
+    font-family: $title-font;
+    color: #fff;
+    background-color: #000;
+
+    font-size: rem(40,$text-bp-sm);
+    line-height: rem(48,$text-bp-sm);
+    padding: rem(30,$text-bp-sm) rem(50,$text-bp-sm);
+
+     @include bp-medium {
+        font-size: rem(28,$text-bp-md);
+        line-height: rem(36,$text-bp-md);
+        padding: rem(8,$text-bp-md) rem(16,$text-bp-md);
+      }
+
+    @include bp-large {
+        font-size: rem(36,$text-bp-lg);
+        line-height: rem(44,$text-bp-lg);
+        padding: rem(10,$text-bp-lg) rem(20,$text-bp-lg);
+    } 
+}
+.page-thumb .date {
+    color: #fff;
+    font-family: $body-font;
+    font-weight: 700;
+    font-size: rem(30,$text-bp-sm);
+    line-height: rem(40,$text-bp-sm);
+    padding-top: rem(10,$text-bp-sm);
+
+     @include bp-medium {
+        font-size: rem(18,$text-bp-md);
+        line-height: rem(24,$text-bp-md);
+        padding-top: rem(8,$text-bp-md);
+      }
+
+    @include bp-large {
+        font-size: rem(18,$text-bp-lg);
+        line-height: rem(24,$text-bp-lg);
+        padding-top: rem(10,$text-bp-lg);
+    }    
+}
+.page-thumb .time {
+    color: #fff;
+    font-family: 'Domine', serif;
+    font-size: rem(30,$text-bp-sm);
+    line-height: rem(48,$text-bp-sm);
+
+     @include bp-medium {
+        font-size: rem(16,$text-bp-md);
+        line-height: rem(21,$text-bp-md);
+      }
+
+    @include bp-large {
+        font-size: rem(16,$text-bp-lg);
+        line-height: rem(28,$text-bp-lg);
+    }    
+}
+.page-thumb .body, .post .body {
+    color: #fff;
+    background-color: #000;
+
+    padding: 0 rem(40,$text-bp-sm) rem(40,$text-bp-sm) rem(40,$text-bp-sm);
+
+     @include bp-medium {
+        padding: 0 rem(16,$text-bp-md) rem(16,$text-bp-md) rem(16,$text-bp-md);
+      }
+
+    @include bp-large {
+        padding: 0 rem(20,$text-bp-lg) rem(20,$text-bp-lg) rem(20,$text-bp-lg);
+    }
+}
+
