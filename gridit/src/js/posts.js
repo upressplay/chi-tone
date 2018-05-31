@@ -19,6 +19,7 @@
 
 	function render() {
 		trace.log(id+" render");
+
 		dom.videos = $( ".videos" );
 		dom.videos.each(function( index ) {
 			var entry = $(this);
@@ -37,8 +38,19 @@
 			addPost(entry);
 		});
 
+		dom.gigs = $( ".gigs" );
+		dom.gigs.each(function( index ) {
+			var entry = $(this);
+			addPost(entry);
+		});
 
-		dom.postContent = $( ".postContent" );
+		dom.music = $( ".music" );
+		dom.music.each(function( index ) {
+			var entry = $(this);
+			addPost(entry);
+		});
+
+		dom.postContent = $( ".post-content" );
 		dom.postContent.on('swipeleft', function(e){
 			site.posts.gotoNext('next');
 		}).on('swiperight', function(e){
@@ -66,7 +78,7 @@
 			});
 		});
 
-		dom.postOverlay = $( "#postOverlay" );
+		dom.postOverlay = $( "#post-overlay" );
 		
 	}
 
@@ -89,19 +101,19 @@
 			
 		});
 
-		dom.postClose = $('#'+id).find( ".postClose" );
+		dom.postClose = $('#'+id).find( ".post-close" );
 		dom.postClose.click(function(event) {
 			var entry = $(this);
 			var id = entry.attr('data-postid');
 			closeOverlay(id);
 		});
 
-		dom.rightArrow = $('#'+id).find( ".rightArrow" );
+		dom.rightArrow = $('#'+id).find( ".right-arrow" );
 		dom.rightArrow.click(function(event) {
 			gotoNext('next');
 		});
 
-		dom.leftArrow = $('#'+id).find( ".leftArrow" );
+		dom.leftArrow = $('#'+id).find( ".left-arrow" );
 		dom.leftArrow.click(function(event) {
 			gotoNext('back');
 		});
@@ -137,7 +149,7 @@
 			var youtubeUrl = "https://www.youtube.com/embed/"+vidid+"?&autoplay=1";
 			if(playlist !== undefined && playlist !== "") youtubeUrl = "https://www.youtube.com/embed/videoseries?list="+playlist+"&autoplay=1";
 
-			post.prepend('<div class="videoPlayerHolder"><div class="videoPlayer"><iframe width="100%" height="100%" src="'+youtubeUrl+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div>');
+			post.prepend('<div class="video-player-holder"><div class="video-player"><iframe width="100%" height="100%" src="'+youtubeUrl+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div>');
 
 			openPost(id);
 			return;
@@ -152,10 +164,10 @@
             site.posts.openPost(this.id);
 
         }; 
-        var imgClass = "postHeaderImg";
+        var imgClass = "post-header-img";
         if(cat == "gallery") {
-        	imgClass = "postImg";
-        	if(imgRatio<1) imgClass = "postImgTall";
+        	imgClass = "post-img";
+        	if(imgRatio<1) imgClass = "post-img-tall";
         }
 
 
@@ -195,10 +207,10 @@
 
 	function hidePost() {
 		trace.log("hidePost"); 
-		currentPost.find('.videoPlayerHolder').remove();
-		currentPost.find('.headerImg').remove();
-		currentPost.find('.postHeaderImg').remove();
-		currentPost.find('.postImg').remove();
+		currentPost.find('.video-player-holder').remove();
+		currentPost.find('.header-img').remove();
+		currentPost.find('.post-header-img').remove();
+		currentPost.find('.post-img').remove();
 		currentPost.css({"display":"none"}); 
 
 	}

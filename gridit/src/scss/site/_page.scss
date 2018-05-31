@@ -231,7 +231,7 @@
 }
 
 
-#postOverlay {
+#post-overlay {
     background-color: #000;
     display: none;
     opacity: 0;
@@ -245,7 +245,7 @@
     overflow-y:auto;  
 }
 
-.postContent {
+.post-content {
     display: none;
     opacity: 0;
     position: fixed;
@@ -258,7 +258,7 @@
     overflow-y:auto;
 }
 
-.postImg {
+.post-img {
 
     position: absolute;
     vertical-align: middle;
@@ -279,7 +279,7 @@
     }
 }
 
-.postImgTall {
+.post-img-tall {
 
     position: absolute;
     vertical-align: middle;
@@ -306,7 +306,7 @@
 
 
 
-.rightArrow, .leftArrow, .postClose{
+.right-arrow, .left-arrow, .post-close{
     color: #fff;
     opacity: .4;
     cursor: pointer;
@@ -323,11 +323,11 @@
     transition:all 0.3s;
 }
 
-.rightArrow:hover, .leftArrow:hover, .postClose:hover {
+.right-arrow:hover, .left-arrow:hover, .post-close:hover {
     opacity: .8;
 }
 
-.rightArrow {
+.right-arrow {
     display: none;
     bottom: rem(30,$text-bp-sm);
     right: rem(200,$text-bp-sm);
@@ -345,7 +345,7 @@
     }
 
 }
-.leftArrow {
+.left-arrow {
     display: none;
     bottom: rem(30,$text-bp-sm);
     left: rem(200,$text-bp-sm);

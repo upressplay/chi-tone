@@ -6,8 +6,12 @@
 	$date = get_the_date('M d, Y', $post->ID);	
 	$summary = get_the_excerpt($post->ID);	
 	$content = get_the_content($post->ID);
-	$cat = get_the_category($post->ID);
-	$cat = $cat[0]->slug;
+	$cat = '';
+	$categories = get_the_category($post->ID);
+
+	foreach( $categories as $c ) {
+		$cat = $cat . $c->slug . ' ';
+	}
 
 	$vidid = get_field('youtube_vidid');
 	$playlist = get_field('youtube_playlist');
@@ -17,42 +21,13 @@
 	$event = get_field('event');
 	$event_date = $event['event_date'];
 	$event_start_time = $event['event_start_time'];
-	$event_end_time = $event['event_end_time'];		
+	$event_end_time = $event['event_end_time'];	
+
+	$post_overlay = false;	
 ?>
 <?php if ( is_single() ) : ?>
 
-	<?php if ( has_post_thumbnail() ) : ?>
-		<div class="header-img" style="background-image:url(<?php echo get_the_post_thumbnail_url($post->ID, "header"); ?>)"></div>
-	<?php endif; ?>
-
-	<?php if( !is_front_page() ) : ?>
-		<h1 class="page-sec-title"> <?php echo $title; ?> </h1>	
-	<?php endif; ?>
-
-	<div class="page-share">
-		SHARE: 
-		<div class="page-social-btn share" data-type="facebook" data-title="<?php echo get_the_title($post->ID) ?>" data-url="<?php echo get_permalink($post->ID) ?>">
-			<span class="fab fa-facebook-square" aria-hidden="true" ></span>
-			<span class="screen-reader-text">Facebook</span>
-		</div>
-		<div class="page-social-btn share" data-type="twitter" data-title="<?php echo get_the_title($post->ID) ?>" data-url="<?php echo get_permalink($post->ID) ?>">
-			<span class="fab fa-twitter-square" aria-hidden="true" ></span>
-			<span class="screen-reader-text">Twitter</span>
-		</div>
-	</div><!-- page-share -->
-	
-    <div class="page-links">
-	    <?php if ( have_rows('post_links') ) : while( have_rows('post_links') ) : the_row(); ?>
-
-		<a href="<?php echo get_sub_field('post_link'); ?>" target="_blank" class="pageLink">
-			<?php echo get_sub_field('post_link_text'); ?>
-		</a>
-		<?php endwhile; endif; ?>
-	</div>
-
-    	<div class="page-body">
-    		<?php the_content(); ?>
-    	</div><!-- page-body -->	
+	<?php include( locate_template( 'post-content.php', false, false ) ); ?>
 
 <? else: ?>
 	<?php 
@@ -78,11 +53,10 @@
 		}
 		
 		$thumb = get_the_post_thumbnail_url( $post->ID, $thumb_size );
-		//$img = get_the_post_thumbnail_url( $post->ID );
 	?>
 	<?php if($show_link) : ?>
 		<?php if($url_override != "")  : ?>
-			<a href="<?php echo $url_override; ?>" target="_blank" data-postid="<?php echo $post->ID; ?>" class="<?php echo $cat; ?> post" >
+			<a href="<?php echo $url_override; ?>" target="_blank" data-postid="<?php echo $post->ID; ?>" class="<?php echo $cat; ?>post" >
 		<? else: ?>
 			<a href="<?php echo $link; ?>" data-postid="<?php echo $post->ID; ?>" class="<?php echo $cat; ?> post" >
 		<?php endif; ?>	
@@ -117,4 +91,19 @@
 	<?php if($show_link) : ?>
 		</a><!-- a page-thumb -->	
 	<?php endif; ?>
+
+	<?php $post_overlay = true; ?>
+
+	<div id="<?php echo $post->ID; ?>" class="post-content" data-hires="<?php echo $img[0]; ?>" data-hires-w="<?php echo $img[1]; ?>" data-hires-h="<?php echo $img[2]; ?>" data-vidid="<?php echo $vidid; ?>" data-playlist="<?php echo $playlist; ?>" data-cat="<?php echo $cat; ?>">
+		<?php include( locate_template( 'post-content.php', false, false ) ); ?>
+		<div data-id="<?php echo $post->ID; ?>" class="post-close fas fa-times-circle"></div>
+		<div class="right-arrow">
+			<span class="fas fa-arrow-circle-right" aria-hidden="true" ></span>
+		    <span class="screen-reader-text">Next Post</span>
+		</div>
+		<div class="left-arrow">
+			<span class="fas fa-arrow-circle-left" aria-hidden="true" ></span>
+		    <span class="screen-reader-text">Back Post</span>
+		</div>
+	</div><!-- post-content -->
 <?php endif; ?>

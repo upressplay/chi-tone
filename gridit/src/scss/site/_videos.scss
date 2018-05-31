@@ -2,7 +2,7 @@
 	cursor: pointer;
 }
 
-#videoOverlay {
+#video-overlay {
 	position: fixed;
 	top:0;
 	left:0;
@@ -15,7 +15,7 @@
 	opacity: 0;	
 }
 
-#videoOverlayClose {
+#video-overlay-close {
 	cursor: pointer;
 	color: #fff;
 	font-family: 'Khula', sans-serif;
@@ -39,12 +39,12 @@
 	}
 }
 
-.videoPlayerHolder {
+.video-player-holder {
 	width: 100vw;
 	height: 100vh;	
 }
 
-.videoPlayer {
+.video-player {
 	position: absolute;
 
 	vertical-align: middle;

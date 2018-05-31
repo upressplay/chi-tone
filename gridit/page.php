@@ -9,37 +9,37 @@
 		<?php endif; ?>
 
 		<?php if(!is_front_page() ) : ?>
-				<h1 class="page-sec-title"><?php echo get_the_title() ?> </h1>	
+			<h1 class="page-sec-title"><?php echo get_the_title() ?> </h1>	
 		<?php endif; ?>
-		<div class="page-share">
-			SHARE: 
-			<div class="page-social-btn share" data-type="facebook" data-title="<?php echo get_the_title($post->ID) ?>" data-url="<?php echo get_permalink($post->ID) ?>">
-				<span class="fab fa-facebook-square" aria-hidden="true" ></span>
-				<span class="screen-reader-text">Facebook</span>
-			</div>
-			<div class="page-social-btn share" data-type="twitter" data-title="<?php echo get_the_title($post->ID) ?>" data-url="<?php echo get_permalink($post->ID) ?>">
-				<span class="fab fa-twitter-square" aria-hidden="true" ></span>
-				<span class="screen-reader-text">Twitter</span>
-			</div>
-		</div><!-- pageShare -->
-		<?php if( have_rows('page_links') ) : ?>
-			<div class="page-links">
-				<?php while( have_rows('page_links') ) : the_row(); ?>
-					<?php if( get_sub_field('page_link_icon') !== "" ) : ?>
-						<div class="social-btn share">
-                          <span class="<?php echo get_sub_field('page_link_icon'); ?>" aria-hidden="true" ></span>
-                          <span class="screen-reader-text"><?php echo get_sub_field('page_link_txt'); ?></span>
-                        </div>
-					<?php else: ?>
-					<a href="<?php echo get_sub_field('page_link'); ?>" target="_blank" class="page-link">
-						<?php echo get_sub_field('page_link_txt'); ?>
-					</a>
-					<?php endif; ?>	
-				<?php endwhile; ?>	
-			</div><!-- pageLinks -->
-		<?php endif; ?>	
+			<div class="page-share">
+				SHARE: 
+				<div class="page-social-btn share" data-type="facebook" data-title="<?php echo get_the_title($post->ID) ?>" data-url="<?php echo get_permalink($post->ID) ?>">
+					<span class="fab fa-facebook-square" aria-hidden="true" ></span>
+					<span class="screen-reader-text">Facebook</span>
+				</div>
+				<div class="page-social-btn share" data-type="twitter" data-title="<?php echo get_the_title($post->ID) ?>" data-url="<?php echo get_permalink($post->ID) ?>">
+					<span class="fab fa-twitter-square" aria-hidden="true" ></span>
+					<span class="screen-reader-text">Twitter</span>
+				</div>
+			</div><!-- pageShare -->
+			<?php if( have_rows('page_links') ) : ?>
+				<div class="page-links">
+					<?php while( have_rows('page_links') ) : the_row(); ?>
+						<?php if( get_sub_field('page_link_icon') !== "" ) : ?>
+							<div class="social-btn share">
+	                          <span class="<?php echo get_sub_field('page_link_icon'); ?>" aria-hidden="true" ></span>
+	                          <span class="screen-reader-text"><?php echo get_sub_field('page_link_txt'); ?></span>
+	                        </div>
+						<?php else: ?>
+						<a href="<?php echo get_sub_field('page_link'); ?>" target="_blank" class="page-link">
+							<?php echo get_sub_field('page_link_txt'); ?>
+						</a>
+						<?php endif; ?>	
+					<?php endwhile; ?>	
+				</div><!-- pageLinks -->
+			<?php endif; ?>	
 
-		<?php echo $content; ?>
+			<?php echo $content; ?>
 
 		<?php $content = get_the_content($post->ID); if(!empty_content($content)) : ?>
     		<div class="page-body">
@@ -101,10 +101,9 @@
     	<?php endwhile; ?>	
 
     	<?php endif; ?>		
-
+    	<div id="post-overlay"></div><!-- postOverlay -->
 		<?php 
 			
-			$output  .= '<div id="postOverlay"></div><!-- postOverlay -->';
 			$cats = get_categories();
 
 			foreach ( $cats as $cat ) {
