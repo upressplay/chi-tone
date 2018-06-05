@@ -20,35 +20,13 @@
 	function render() {
 		trace.log(id+" render");
 
-		dom.videos = $( ".videos" );
-		dom.videos.each(function( index ) {
+		dom.overlay = $( ".overlay" );
+		dom.overlay.each(function( index ) {
 			var entry = $(this);
 			addPost(entry);
 		});
 
-		dom.gallery = $( ".gallery" );
-		dom.gallery.each(function( index ) {
-			var entry = $(this);
-			addPost(entry);
-		});
-
-		dom.news = $( ".news" );
-		dom.news.each(function( index ) {
-			var entry = $(this);
-			addPost(entry);
-		});
-
-		dom.gigs = $( ".gigs" );
-		dom.gigs.each(function( index ) {
-			var entry = $(this);
-			addPost(entry);
-		});
-
-		dom.music = $( ".music" );
-		dom.music.each(function( index ) {
-			var entry = $(this);
-			addPost(entry);
-		});
+		
 
 		dom.postContent = $( ".post-content" );
 		dom.postContent.on('swipeleft', function(e){

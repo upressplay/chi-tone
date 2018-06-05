@@ -34,6 +34,7 @@
 		$thumb_style = get_field('thumb_style'); 
 		$thumb_layout = $thumb_style['thumb_layout']; 
 		$thumb_size = $thumb_style['thumb_size'];
+		$thumb_display = $thumb_style['thumb_display'];
 
 		$show_img = false;
 		$show_title = false;
@@ -54,56 +55,54 @@
 		
 		$thumb = get_the_post_thumbnail_url( $post->ID, $thumb_size );
 	?>
-	<?php if($show_link) : ?>
+	<?php if($thumb_display != "false")  : ?>
+	
 		<?php if($url_override != "")  : ?>
 			<a href="<?php echo $url_override; ?>" target="_blank" data-postid="<?php echo $post->ID; ?>" class="<?php echo $cat; ?>post" >
 		<? else: ?>
-			<a href="<?php echo $link; ?>" data-postid="<?php echo $post->ID; ?>" class="<?php echo $cat; ?> post" >
+			<a href="<?php echo $link; ?>" data-postid="<?php echo $post->ID; ?>" class="<?php echo $thumb_display; ?> <?php echo $cat; ?> post" >
 		<?php endif; ?>	
-	<?php endif; ?>
 
-	<div class="page-thumb <?php echo $thumb_layout; ?>" >
-		<?php if($show_img) : ?>
-			<div class="img <?php echo $thumb_size; ?>"><img src="<?php echo $thumb; ?>" alt="<?php echo $title; ?>'"/></div><?php endif; ?><div class="info">	
-			<?php if($show_title) : ?>
-				<h3 class="title"><?php echo $title; ?>
-			<?php endif; ?>
-			<?php if($show_date) : ?>
-				<div class="date"><?php echo $date ; ?></div>
-			<?php endif; ?>
+		<div class="page-thumb <?php echo $thumb_layout; ?>" >
+			<?php if($show_img) : ?>
+				<div class="img <?php echo $thumb_size; ?>"><img src="<?php echo $thumb; ?>" alt="<?php echo $title; ?>'"/></div><?php endif; ?><div class="info">	
+				<?php if($show_title) : ?>
+					<h3 class="title"><?php echo $title; ?>
+				<?php endif; ?>
+				<?php if($show_date) : ?>
+					<div class="date"><?php echo $date ; ?></div>
+				<?php endif; ?>
 
-			<?php if($show_event) : ?>
-				<div class="date"><?php echo $event_date ; ?></div>
-				<div class="time"><?php echo $event_start_time ; ?> - <?php echo $event_end_time; ?></div>	
-			<?php endif; ?>
-			<?php if($show_title) : ?>
-				</h3><!-- title -->	
-			<?php endif; ?>
-			<?php if($show_body) : ?>
-				<div class="body"><?php the_content(); ?> </div>
-			<?php endif; ?>
-			<?php if($show_summary) : ?>
-				<div class="body"><?php echo $summary ?></div>
-			<?php endif; ?>
-		</div><!-- info -->
-	</div><!-- page-thumb -->
-
-	<?php if($show_link) : ?>
+				<?php if($show_event) : ?>
+					<div class="date"><?php echo $event_date ; ?></div>
+					<div class="time"><?php echo $event_start_time ; ?> - <?php echo $event_end_time; ?></div>	
+				<?php endif; ?>
+				<?php if($show_title) : ?>
+					</h3><!-- title -->	
+				<?php endif; ?>
+				<?php if($show_body) : ?>
+					<div class="body"><?php the_content(); ?> </div>
+				<?php endif; ?>
+				<?php if($show_summary) : ?>
+					<div class="body"><?php echo $summary ?></div>
+				<?php endif; ?>
+			</div><!-- info -->
+		</div><!-- page-thumb -->
 		</a><!-- a page-thumb -->	
+
+		<?php $post_overlay = true; ?>
+
+		<div id="<?php echo $post->ID; ?>" class="post-content" data-hires="<?php echo $img[0]; ?>" data-hires-w="<?php echo $img[1]; ?>" data-hires-h="<?php echo $img[2]; ?>" data-vidid="<?php echo $vidid; ?>" data-playlist="<?php echo $playlist; ?>" data-cat="<?php echo $cat; ?>">
+			<?php include( locate_template( 'post-content.php', false, false ) ); ?>
+			<div data-id="<?php echo $post->ID; ?>" class="post-close fas fa-times-circle"></div>
+			<div class="right-arrow">
+				<span class="fas fa-arrow-circle-right" aria-hidden="true" ></span>
+			    <span class="screen-reader-text">Next Post</span>
+			</div>
+			<div class="left-arrow">
+				<span class="fas fa-arrow-circle-left" aria-hidden="true" ></span>
+			    <span class="screen-reader-text">Back Post</span>
+			</div>
+		</div><!-- post-content -->
 	<?php endif; ?>
-
-	<?php $post_overlay = true; ?>
-
-	<div id="<?php echo $post->ID; ?>" class="post-content" data-hires="<?php echo $img[0]; ?>" data-hires-w="<?php echo $img[1]; ?>" data-hires-h="<?php echo $img[2]; ?>" data-vidid="<?php echo $vidid; ?>" data-playlist="<?php echo $playlist; ?>" data-cat="<?php echo $cat; ?>">
-		<?php include( locate_template( 'post-content.php', false, false ) ); ?>
-		<div data-id="<?php echo $post->ID; ?>" class="post-close fas fa-times-circle"></div>
-		<div class="right-arrow">
-			<span class="fas fa-arrow-circle-right" aria-hidden="true" ></span>
-		    <span class="screen-reader-text">Next Post</span>
-		</div>
-		<div class="left-arrow">
-			<span class="fas fa-arrow-circle-left" aria-hidden="true" ></span>
-		    <span class="screen-reader-text">Back Post</span>
-		</div>
-	</div><!-- post-content -->
 <?php endif; ?>

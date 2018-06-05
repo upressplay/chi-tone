@@ -4,9 +4,7 @@
 	<?php endif; ?>
 <?php endif; ?>
 
-<?php if( !is_front_page() ) : ?>
-	<h1 class="page-sec-title"> <?php echo $title; ?> </h1>	
-<?php endif; ?>
+<h1 class="page-sec-title"> <?php echo $title; ?> </h1>	
 
 <div class="page-share">
 	SHARE: 

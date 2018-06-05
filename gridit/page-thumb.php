@@ -23,7 +23,7 @@
 				<img src="<?php echo $thumb ; ?>" alt="<?php echo $title; ?>"/>
 			</div>	<!-- page-thumb -->
 			<?php if($show_title || $show_date || $show_body || $show_summary) : ?>
-				<div class="info">';	
+				<div class="info">	
 					<?php if($show_title) : ?>
 						<h3 class="title"><?php echo $title; ?>	
 					<?php endif; ?>
@@ -39,7 +39,7 @@
 					<?php if($show_summary) : ?>
 						<div class="body"><?php echo $summary; ?></div><!-- pageThumbBody -->
 					<?php endif; ?>
-				</div><!-- info -->';
+				</div><!-- info -->
 			<?php endif; ?>	
 		<?php endif; ?>				
 		</div><!-- page-thumb -->

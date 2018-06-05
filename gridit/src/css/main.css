@@ -329,18 +329,18 @@ a:active {
       font-size: 1.8rem;
       padding: 0 1rem; } }
 
-.header-img, .post-header-img {
+.header-img {
   display: block;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: auto 100%;
   width: 75rem; }
   @media only screen and (min-width: 751px) {
-    .header-img, .post-header-img {
+    .header-img {
       background-size: 100% auto;
       width: 127rem; } }
   @media only screen and (min-width: 1271px) {
-    .header-img, .post-header-img {
+    .header-img {
       background-size: 100% auto;
       width: 160rem; } }
 
@@ -507,118 +507,9 @@ a:active {
   vertical-align: top;
   cursor: pointer; }
 
-#post-overlay {
-  background-color: #000;
-  display: none;
-  opacity: 0;
-  position: fixed;
-  z-index: 1009;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto; }
-
-.post-content {
-  display: none;
-  opacity: 0;
-  position: fixed;
-  z-index: 1010;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto; }
-
-.post-img {
-  position: absolute;
-  vertical-align: middle;
-  text-align: center;
-  width: 90vw;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-  @media only screen and (min-width: 751px) {
-    .post-img {
-      width: 127rem; } }
-
-.post-img-tall {
-  position: absolute;
-  vertical-align: middle;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 90vh; }
-  .post-img-tall img {
-    width: auto;
-    height: 100%; }
-
-.right-arrow, .left-arrow, .post-close {
-  color: #fff;
-  opacity: .4;
-  cursor: pointer;
-  position: fixed;
-  font-size: 5rem;
-  transition: all 0.3s; }
-  @media only screen and (min-width: 751px) {
-    .right-arrow, .left-arrow, .post-close {
-      font-size: 5rem; } }
-  @media only screen and (min-width: 1271px) {
-    .right-arrow, .left-arrow, .post-close {
-      font-size: 6rem; } }
-
-.right-arrow:hover, .left-arrow:hover, .post-close:hover {
-  opacity: .8; }
-
-.right-arrow {
-  display: none;
-  bottom: 3rem;
-  right: 20rem; }
-  @media only screen and (min-width: 751px) {
-    .right-arrow {
-      display: block;
-      bottom: 50%;
-      right: 3rem; } }
-  @media only screen and (min-width: 1271px) {
-    .right-arrow {
-      display: block;
-      bottom: 50%;
-      right: 3rem; } }
-
-.left-arrow {
-  display: none;
-  bottom: 3rem;
-  left: 20rem; }
-  @media only screen and (min-width: 751px) {
-    .left-arrow {
-      display: block;
-      bottom: 50%;
-      left: 3rem; } }
-  @media only screen and (min-width: 1271px) {
-    .left-arrow {
-      display: block;
-      bottom: 50%;
-      left: 3rem; } }
-
-.post-close {
-  top: 3rem;
-  right: 3rem;
-  transition: all 0.3s; }
-  @media only screen and (min-width: 751px) {
-    .post-close {
-      top: 3rem;
-      right: 3rem; } }
-  @media only screen and (min-width: 1271px) {
-    .post-close {
-      top: 3rem;
-      right: 3rem; } }
-
 .page-thumb {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   overflow: hidden;
   margin: 1rem; }
   @media only screen and (min-width: 751px) {
@@ -792,6 +683,129 @@ a:active {
   @media only screen and (min-width: 1271px) {
     .page-thumb .body, .post .body {
       padding: 0 2rem 2rem 2rem; } }
+
+.post-header-img {
+  display: inline-block;
+  max-width: 75rem; }
+  @media only screen and (min-width: 751px) {
+    .post-header-img {
+      max-width: 63.5rem; } }
+  @media only screen and (min-width: 1271px) {
+    .post-header-img {
+      max-width: 80rem; } }
+  .post-header-img img {
+    width: 100%;
+    height: auto; }
+
+#post-overlay {
+  background-color: #000;
+  display: none;
+  opacity: 0;
+  position: fixed;
+  z-index: 1009;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+.post-content {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  z-index: 1010;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center; }
+
+.post-img {
+  position: absolute;
+  vertical-align: middle;
+  text-align: center;
+  width: 90vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  @media only screen and (min-width: 751px) {
+    .post-img {
+      width: 127rem; } }
+
+.post-img-tall {
+  position: absolute;
+  vertical-align: middle;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90vh; }
+  .post-img-tall img {
+    width: auto;
+    height: 100%; }
+
+.right-arrow, .left-arrow, .post-close {
+  color: #fff;
+  opacity: .4;
+  cursor: pointer;
+  position: fixed;
+  font-size: 5rem;
+  transition: all 0.3s; }
+  @media only screen and (min-width: 751px) {
+    .right-arrow, .left-arrow, .post-close {
+      font-size: 5rem; } }
+  @media only screen and (min-width: 1271px) {
+    .right-arrow, .left-arrow, .post-close {
+      font-size: 6rem; } }
+
+.right-arrow:hover, .left-arrow:hover, .post-close:hover {
+  opacity: .8; }
+
+.right-arrow {
+  display: none;
+  bottom: 3rem;
+  right: 20rem; }
+  @media only screen and (min-width: 751px) {
+    .right-arrow {
+      display: block;
+      bottom: 50%;
+      right: 3rem; } }
+  @media only screen and (min-width: 1271px) {
+    .right-arrow {
+      display: block;
+      bottom: 50%;
+      right: 3rem; } }
+
+.left-arrow {
+  display: none;
+  bottom: 3rem;
+  left: 20rem; }
+  @media only screen and (min-width: 751px) {
+    .left-arrow {
+      display: block;
+      bottom: 50%;
+      left: 3rem; } }
+  @media only screen and (min-width: 1271px) {
+    .left-arrow {
+      display: block;
+      bottom: 50%;
+      left: 3rem; } }
+
+.post-close {
+  top: 3rem;
+  right: 3rem;
+  transition: all 0.3s; }
+  @media only screen and (min-width: 751px) {
+    .post-close {
+      top: 3rem;
+      right: 3rem; } }
+  @media only screen and (min-width: 1271px) {
+    .post-close {
+      top: 3rem;
+      right: 3rem; } }
 
 .videos {
   cursor: pointer; }
