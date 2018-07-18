@@ -52,6 +52,17 @@ $cdn = "/";
 		<meta name="twitter:image" content="<?php echo $meta_img; ?>">
 
 		<link rel="shortcut icon" href="<?php echo get_site_icon_url(); ?>" />
+
+	<script type="text/javascript">
+
+		$(function(){
+			if (self.location !== top.location) {
+		   		$('body').empty();
+		   		$('body').html('Cross frame scripting detected and disallowed.');
+		   	}
+		})
+
+	</script>
 	</head>
 	<body>
 	<?php include( locate_template( 'nav.php', false, false ) ); ?> 
