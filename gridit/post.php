@@ -8,14 +8,16 @@
 	$content = get_the_content($post->ID);
 	$cat = '';
 	$categories = get_the_category($post->ID);
+	$cat_count = count($categories);
 
 	foreach( $categories as $c ) {
-		$cat = $cat . $c->slug . ' ';
+		$cat = $cat . $c->slug;
+		$cat_count = $cat_count - 1;
+		if($cat_count != 0) $cat = $cat . ' ';
 	}
 
 	$vidid = get_field('youtube_vidid');
 	$playlist = get_field('youtube_playlist');
-
 	$url_override = get_field('url_override');
 
 	$event = get_field('event');

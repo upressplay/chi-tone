@@ -122,9 +122,12 @@
 
 		if(!overlayOpen) openOverlay();
 
+		trace.log("cat = "+cat+cat == "videos");
+
 		if(cat == "videos") {
 
 			var youtubeUrl = "https://www.youtube.com/embed/"+vidid+"?&autoplay=1";
+			trace.log("youtubeUrl = "+youtubeUrl);
 			if(playlist !== undefined && playlist !== "") youtubeUrl = "https://www.youtube.com/embed/videoseries?list="+playlist+"&autoplay=1";
 
 			post.prepend('<div class="video-player-holder"><div class="video-player"><iframe width="100%" height="100%" src="'+youtubeUrl+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div>');

@@ -16,6 +16,10 @@
 		<span class="fab fa-twitter-square" aria-hidden="true" ></span>
 		<span class="screen-reader-text">Twitter</span>
 	</div>
+	<div class="page-social-btn share" data-type="linkedin" data-title="<?php echo get_the_title($post->ID) ?>" data-url="<?php echo get_permalink($post->ID) ?>">
+		<span class="fab fa-linkedin" aria-hidden="true" ></span>
+		<span class="screen-reader-text">LinkedIn</span>
+	</div>
 </div><!-- page-share -->
 
 <div class="page-links">
